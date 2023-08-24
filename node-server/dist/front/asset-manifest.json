@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.171b6792.css",
+    "main.js": "/static/js/main.5a59293e.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/restaurant.webp": "/static/media/restaurant.2a216b2214536a868626.webp",
+    "static/media/contact.webp": "/static/media/contact.401d9b726bcc6de14cdf.webp",
+    "static/media/munchlogo.svg": "/static/media/munchlogo.ac3d2b305610cde31d9b7da8f19ed6f4.svg",
+    "index.html": "/index.html",
+    "static/media/gb.svg": "/static/media/gb.516897fd3988e35032b772b026a19f75.svg",
+    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "static/media/pl.svg": "/static/media/pl.2b5541c54505328dbc1b264a72369d23.svg",
+    "main.171b6792.css.map": "/static/css/main.171b6792.css.map",
+    "main.5a59293e.js.map": "/static/js/main.5a59293e.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.171b6792.css",
+    "static/js/main.5a59293e.js"
+  ]
+}
