@@ -57,19 +57,6 @@ const handleCategoriesRouting = (app, route, model) => {
             (0, handleDuplicatePropValue_1.default)(error, res, itemName);
         }
     }));
-    app.delete(`/${route}/categories`, auth0_1.validateAccessToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            const ids = req.query.filter.split(`"`).filter((value) => {
-                return value.length === 24;
-            });
-            yield model.deleteMany({ _id: { $in: ids } });
-            res.status(200).json("OK");
-        }
-        catch (error) {
-            console.log(error);
-            res.status(400).json(error);
-        }
-    }));
     app.delete(`/${route}/categories/:id`, auth0_1.validateAccessToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const result = yield model.findByIdAndDelete(req.params.id);

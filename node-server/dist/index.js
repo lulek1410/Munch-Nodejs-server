@@ -63,12 +63,10 @@ app.use((0, helmet_1.default)({
                 "http://localhost:3000",
                 "http://localhost:5000",
                 "https://api.i18nexus.com/",
-                "https://storage.googleapis.com/",
             ],
             "img-src": [
                 "http://localhost:3000",
                 "http://localhost:5000",
-                "https://storage.googleapis.com/",
                 "https://react-admin-telemetry.marmelab.com/",
                 "https://s.gravatar.com/avatar/",
                 "https://i2.wp.com/",
@@ -94,8 +92,7 @@ app.use(express_1.default.json());
 app.use((0, nocache_1.default)());
 app.use((0, compression_1.default)());
 app.use(express_1.default.static(path_1.default.join(__dirname, "front")));
-app.get(/^\/$|(\/menu)(\/.*)?|\/order|^\/people$|(\/news)(\/.*)?|^\/contact$|((\/admin)(\/.*)?)/, (req, res) => {
-    console.log("serve", path_1.default.resolve(__dirname, "front", "index.html"));
+app.get(/^\/(menu(\/.*)?|order|people|news(\/.*)?|contact|admin(\/.*)?)$/, (req, res) => {
     res.sendFile(path_1.default.resolve(__dirname, "front", "index.html"));
 });
 (0, handleCategoriesRouting_1.default)(app, "dishes", DishCategory_1.default);
@@ -110,7 +107,6 @@ app.get(/^\/$|(\/menu)(\/.*)?|\/order|^\/people$|(\/news)(\/.*)?|^\/contact$|((\
 (0, handleEventRouting_1.default)(app);
 (0, handlePeopleInfoRouting_1.default)(app);
 app.get("/all", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("all");
     try {
         const dishCategories = (yield DishCategory_1.default.find());
         const dishes = (yield Dish_1.default.find());
@@ -144,5 +140,5 @@ app.use(error_1.errorHandler);
 app.use(not_found_1.notFoundHandler);
 var port = 5000;
 app.listen(5000, () => {
-    console.log("server listens on 5000");
+    console.log("server listens ad 5000");
 });

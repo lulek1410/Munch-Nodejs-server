@@ -44,38 +44,6 @@ const handlePeopleInfoRouting = (app) => {
             res.status(400).json("Could not GET /peopleInfo");
         }
     }));
-    app.post("/peopleInfo", auth0_1.validateAccessToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            yield PeopleInfo_1.default.create(req.body);
-            res.status(201).json("OK");
-        }
-        catch (error) {
-            (0, handleDuplicatePropValue_1.default)(error, res, itemName);
-        }
-    }));
-    app.delete("/peopleInfo", auth0_1.validateAccessToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            const ids = req.query.filter.split(`"`).filter((value) => {
-                return value.length === 24;
-            });
-            yield PeopleInfo_1.default.deleteMany({ _id: { $in: ids } });
-            res.status(200).json("OK");
-        }
-        catch (error) {
-            console.log(error);
-            res.status(400).json(error);
-        }
-    }));
-    app.delete("/peopleInfo/:id", auth0_1.validateAccessToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            const result = yield PeopleInfo_1.default.findByIdAndDelete(req.params.id);
-            res.status(200).json("OK");
-        }
-        catch (error) {
-            console.log(error);
-            res.status(400).json(error);
-        }
-    }));
     app.get("/peopleInfo/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const result = yield PeopleInfo_1.default.findById(req.params.id);

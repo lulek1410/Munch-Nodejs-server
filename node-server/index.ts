@@ -97,7 +97,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, "front")));
 
 app.get(
-	/^(menu(\/.*)?|order|people|news(\/.*)?|contact|admin(\/.*)?)$/,
+	/^\/(menu(\/.*)?|order|people|news(\/.*)?|contact|admin(\/.*)?)$/,
 	(req: Request, res: Response) => {
 		res.sendFile(path.resolve(__dirname, "front", "index.html"));
 	}
